@@ -1,0 +1,545 @@
+common_system	common_subtype	subtype	min_gene	tool	
+Abi	Abi	ABI	NA	pads	
+2TM_1TM_TIR	2TM_1TM_TIR	Rst_2TM_1TM_TIR	3	defensefinder	
+3HP	3HP	Rst_3HP	3	defensefinder	
+Abi2	Abi2	Abi2	1	defensefinder	
+AbiA	AbiA_large	AbiA_large	1	defensefinder	
+AbiA	AbiA_small	AbiA_small	2	defensefinder	
+AbiA	AbiA	AbiA	NA	defensefinder	
+AbiB	AbiB	AbiB	1	defensefinder	
+AbiC	AbiC	AbiC	1	defensefinder	
+AbiD	AbiD	AbiD	1	defensefinder	
+AbiE	AbiE	AbiE	2	defensefinder	
+AbiG	AbiG	AbiG	2	defensefinder	
+AbiH	AbiH	AbiH	1	defensefinder	
+AbiI	AbiI	AbiI	1	defensefinder	
+AbiJ	AbiJ	AbiJ	1	defensefinder	
+AbiK	AbiK	AbiK	1	defensefinder	
+AbiL	AbiL	AbiL	2	defensefinder	
+AbiN	AbiN	AbiN	1	defensefinder	
+AbiO	AbiO	AbiO	1	defensefinder	
+AbiP2	AbiP2	AbiP2	1	defensefinder	"considered part of DRT_type_I in padloc, but going to leave separate for now, turns out, AbiP2 is a reverse transcriptase (hence its inclusion in DRT by padloc). Leaving separate for now, but wil look into during refinement of systems in SAGs since padloc might say ""DRT"" and df might say ""AbiP2"" but both have the AbiP2 gene)"
+AbiQ	AbiQ	AbiQ	1	defensefinder	
+AbiR	AbiR	AbiR	3	defensefinder	absent in padloc
+AbiT	AbiT	AbiT	2	defensefinder	
+AbiU	AbiU	AbiU	1	defensefinder	
+AbiV	AbiV	AbiV	1	defensefinder	
+AbiZ	AbiZ	AbiZ	1	defensefinder	
+Aditi	Aditi	Aditi	2	defensefinder	absent in padloc
+ApeA	ApeA	Gao_Ape	1	defensefinder	"called ApeA in padloc, both require one gene"
+AVAST	AVAST_type_I_other	AVAST_I	2	defensefinder	DF numbers correspond to AVAST_type_I_other  in which only 2 of the 3 genes are required
+AVAST	AVAST_type_II	AVAST_II	1	defensefinder	
+AVAST	AVAST_type_III	AVAST_III	2	defensefinder	
+AVAST	AVAST_type_IV	AVAST_IV	1	defensefinder	
+AVAST	AVAST_type_V	AVAST_V	1	defensefinder	
+AVAST	AVAST	AVAST	NA	defensefinder	
+Azaca	Azaca	Azaca	3	defensefinder	absent in padloc
+Borvo	Borvo	Borvo	1	defensefinder	absent in padloc
+BREX	BREX_df	BREX	3	defensefinder	"tricky, requires 3 genes while padloc requires 2, genes somewhat overlap, but instances of BREX come up as DMS_other in padloc, so going to keep separate and add df label to distinguish"
+BREX	BREX_type_I	BREX_I	3	defensefinder	"df requires 3  genes(BrxZ,BrxL, and an accessory (C,A,B,orX)) but padloc requires 6 (BrxA,B,C,X,Z,L), just going to call same"
+BREX	BREX_type_II	BREX_II	3	defensefinder	"df only requires 3 genes (Z,W + accessory(Y,D,X)), but padloc requires 6 (W,X,C,Z,D,H) - calling same even though Y missing from padloc set and C and H there"
+BREX	BREX_type_III	BREX_III	3	defensefinder	"df only requires 3 of core genes (Z,F,H,X) ;(acc C,Y,A,), while padloc requires (A,C,F,X,H,Z)"
+BREX	BREX_type_IV	BREX_IV	2	defensefinder	"df only requires 2 genes and 2 of core ( Y,L,P) (acc: C,Z,);  padloc requires 5 genes: C,L,P,Z - missing Y"
+BREX	BREX_type_V	BREX_V	4	defensefinder	"df requires 4 total, 2 core (Z,HII; acc: C,Y,A,B,X); padloc requires 6 (A,B,C,HII,X,Z) - no Y"
+BREX	BREX_type_VI	BREX_VI	4	defensefinder	"df requires 4 total, 2 core (Z,E; acc: C,Y,A,B,D,HI,X); padloc requires 8 (A,B,C,D,E,HI,X,Z) - no Y"
+BstA	BstA	BstA	1	defensefinder	
+Bunzi	Bunzi	Bunzi	2	defensefinder	not in padloc
+CapRel	CapRel	CapRel	1	defensefinder	not in padloc
+Cas	Cas_Class1_TypeI_subtypeA	CAS_Class1-Subtype-I-A	2	defensefinder	"too complicated to cross-check individually (also prone to error, genes have multiple names); going to unify naming as is"
+Cas	Cas_Class1_TypeI_subtypeB	CAS_Class1-Subtype-I-B	2	defensefinder	
+Cas	Cas_Class1_TypeI_subtypeC	CAS_Class1-Subtype-I-C	2	defensefinder	
+Cas	Cas_Class1_TypeI_subtypeD	CAS_Class1-Subtype-I-D	2	defensefinder	
+Cas	Cas_Class1_TypeI_subtypeE	CAS_Class1-Subtype-I-E	2	defensefinder	
+Cas	Cas_Class1_TypeI_subtypeF	CAS_Class1-Subtype-I-F	2	defensefinder	
+Cas	Cas_Class1_TypeI_subtypeG	CAS_Class1-Subtype-I-G	2	defensefinder	
+Cas	Cas_Class1_TypeIII_subtypeA	CAS_Class1-Subtype-III-A	2	defensefinder	
+Cas	Cas_Class1_TypeIII_subtypeB	CAS_Class1-Subtype-III-B	2	defensefinder	
+Cas	Cas_Class1_TypeIII_subtypeC	CAS_Class1-Subtype-III-C	2	defensefinder	
+Cas	Cas_Class1_TypeIII_subtypeD	CAS_Class1-Subtype-III-D	2	defensefinder	
+Cas	Cas_Class1_TypeIII_subtypeE	CAS_Class1-Subtype-III-E	2	defensefinder	
+Cas	Cas_Class1_TypeIII_subtypeF	CAS_Class1-Subtype-III-F	2	defensefinder	
+Cas	Cas_Class1_TypeIV_subtypeA	CAS_Class1-Subtype-IV-A	2	defensefinder	
+Cas	Cas_Class1_TypeIV_subtypeB	CAS_Class1-Subtype-IV-B	2	defensefinder	
+Cas	Cas_Class1_TypeIV_subtypeC	CAS_Class1-Subtype-IV-C	2	defensefinder	
+Cas	Cas_Class1_TypeI	CAS_Class1-Type-I	2	defensefinder	"not distinct in padloc, only subtypes listed in padloc"
+Cas	Cas_Class1_TypeIII	CAS_Class1-Type-III	2	defensefinder	"not distinct in padloc, only subtypes listed in padloc"
+Cas	Cas_Class1_TypeIV	CAS_Class1-Type-IV	2	defensefinder	
+Cas	Cas_Class2_TypeII_subtypeA	CAS_Class2-Subtype-II-A	2	defensefinder	
+Cas	Cas_Class2_TypeII_subtypeB	CAS_Class2-Subtype-II-B	2	defensefinder	
+Cas	Cas_Class2_TypeII_subtypeC	CAS_Class2-Subtype-II-C	2	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeA	CAS_Class2-Subtype-V-A	2	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeB	CAS_Class2-Subtype-V-B	2	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeC	CAS_Class2-Subtype-V-C	1	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeD	CAS_Class2-Subtype-V-D	1	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeE	CAS_Class2-Subtype-V-E	2	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeF	CAS_Class2-Subtype-V-F	2	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeG	CAS_Class2-Subtype-V-G	1	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeH	CAS_Class2-Subtype-V-H	1	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeI	CAS_Class2-Subtype-V-I	1	defensefinder	
+Cas	Cas_Class2_TypeV_subtypeK	CAS_Class2-Subtype-V-K	1	defensefinder	
+Cas	Cas_Class2_TypeVI_subtypeA	CAS_Class2-Subtype-VI-A	1	defensefinder	
+Cas	Cas_Class2_TypeVI_subtypeB	CAS_Class2-Subtype-VI-B	1	defensefinder	
+Cas	Cas_Class2_TypeVI_subtypeC	CAS_Class2-Subtype-VI-C	1	defensefinder	
+Cas	Cas_Class2_TypeVI_subtypeD	CAS_Class2-Subtype-VI-D	1	defensefinder	
+Cas	Cas_Class2_TypeII	CAS_Class2-Type-II	2	defensefinder	"not distinct in padloc, only subtypes listed in padloc"
+Cas	Cas_Class2_TypeV	CAS_Class2-Type-V	2	defensefinder	
+Cas	Cas_Class2_TypeVI	CAS_Class2-Type-VI	1	defensefinder	"not distinct in defensefinder, only subtypes listed in padloc"
+Cas	Cas_cluster	CAS_Cluster	2	defensefinder	"not in padloc, but unifying capitalization"
+Cas	Cas	Cas	NA	defensefinder	
+CBASS	CBASS_df	CBASS	2	defensefinder	"unclear if it overlaps with cbass_other in padloc, doesn't seem to come up in SAGs anyway"
+CBASS	CBASS_type_I	CBASS_I	2	defensefinder	
+CBASS	CBASS_type_II	CBASS_II	3	defensefinder	I think this is including Iis because it appears to only require 3 genes but cannonical type II requries 4
+CBASS	CBASS_type_III	CBASS_III	3	defensefinder	"from my reading, it requires 4 genes, but defensefinder only requires 3É, appears to exclude TRIP13 which is necessary!"
+CBASS	CBASS_type_IV	CBASS_IV	3	defensefinder	
+DarTG	DarTG	DarTG	2	defensefinder	
+Dazbog	Dazbog	Dazbog	2	defensefinder	absent in padloc
+DISARM	DISARM_type_I	DISARM_1	4	defensefinder	
+DISARM	DISARM_type_II	DISARM_2	4	defensefinder	
+DISARM	DISARM	DISARM	NA	defensefinder	
+DmdDE	DmdDE	DdmDE	2	defensefinder	"absent in padloc, SHOULD say DmdDE, I am relableing this as such even though it's clearly a defensefinder typo"
+DmdDE	DmdDE	DmdDE	NA	defensefinder	
+Dnd	Dnd_ABCDE	Dnd_ABCDE	4	defensefinder	
+Dnd	Dnd_ABCDEFGH	Dnd_ABCDEFGH	7	defensefinder	suspiciously looks like padloc's Dnd_FGH but going to keep separate for now since they have different min gene requirements
+Dnd	Dnd	Dnd	NA	defensefinder	
+Dodola	Dodola	Dodola	2	defensefinder	
+Dpd	Dpd	Dpd	4	defensefinder	I think I'll use 4 genes as minimum for Dpd because the paper doesn't make clear if any of the genes are NOT essential
+DRT	DRT_type_I	DRT_1	2	defensefinder	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_II	DRT_2	1	defensefinder	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_III	DRT_3	2	defensefinder	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_IV	DRT_4	1	defensefinder	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_V	DRT_5	1	defensefinder	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_VI	DRT6	1	defensefinder	
+DRT	DRT_type_VII	DRT7	1	defensefinder	
+DRT	DRT_type_VIII	DRT8	1	defensefinder	
+DRT	DRT_type_IX	DRT9	1	defensefinder	"might belong to DRT_class_II in defensefinder since Drt9 overlap, but not dealing with that here"
+DRT	DRT	DRT	NA	defensefinder	
+Druantia	Druantia_type_I	Druantia_I	3	defensefinder	using 4 (from padloc) as minimum because all genes are essential as stated in Doron paper!
+Druantia	Druantia_type_II	Druantia_II	3	defensefinder	using padloc's numbers since I trust them more for this system
+Druantia	Druantia_type_III	Druantia_III	2	defensefinder	they agree on min genes! DruHE
+Druantia	Druantia	Druantia	NA	defensefinder	
+Dsr	Dsr_type_I	Dsr_I	1	defensefinder	
+Dsr	Dsr_type_II	Dsr_II	1	defensefinder	
+Dsr	Dsr	Dsr	NA	defensefinder	
+DUF4238	DUF4238	Rst_DUF4238	1	defensefinder	
+dXTPase	dGTPase	dGTPase	1	defensefinder	"absent in padloc default system name (only as dXTPase, fixed this in parsing)"
+Eleos	Eleos	Eleos	2	defensefinder	
+Gabija	Gabija	Gabija	2	defensefinder	
+GasderMIN	GasderMIN	GasderMIN	1	defensefinder	
+Gop_beta_cll	Gop_beta_cll	Rst_gop_beta_cll	3	defensefinder	
+gp29_gp30	gp29_gp30	gp29_gp30	2	defensefinder	unclear if this is in reference to GAO_29 or something
+Hachiman	Hachiman_type_I	Hachiman	2	defensefinder	"defensefinder doesn't include variations of hachiman, but the genes it includes correspond to type I"
+Helicase_DUF2290	Helicase_DUF2290	Rst_HelicaseDUF2290	2	defensefinder	
+Her	Her_DUF	Gao_Her_DUF	2	defensefinder	
+Her	Her_SIR	Gao_Her_SIR	2	defensefinder	
+Her	Her	Gao_Her	NA	defensefinder	
+Hhe	Hhe	Gao_Hhe	1	defensefinder	
+Hydrolase_TM	Hydrolase_TM	Rst_Hydrolase-Tm	2	defensefinder	
+Hydrolase_TM	Hydrolase_TM	Rst_Hydrolase-3Tm	NA	defensefinder	
+Iet	Iet	Gao_Iet	2	defensefinder	
+ISG15-like	ISG15-like	ISG15-like	4	defensefinder	
+Kiwa	Kiwa	Kiwa	2	defensefinder	
+Lamassu	Lamassu_type_I	Lamassu-Fam	2	defensefinder	looks like it requires the same genes at type I in padloc
+Lit	Lit	Lit	1	defensefinder	
+Menshen	Menshen	Menshen	2	defensefinder	
+Mok_Hok_Sok	Mok_Hok_Sok	Mok_Hok_Sok	1	defensefinder	
+Mokosh	Mokosh_type_I	Mokosh_TypeI	2	defensefinder	
+Mokosh	Mokosh_type_II	Mokosh_TypeII	1	defensefinder	
+Mokosh	Mokosh	Mokosh	NA	defensefinder	
+MqsRAC	MqsRAC	MqsRAC	2	defensefinder	
+Mza	Mza	Gao_Mza	5	defensefinder	"padloc only requires 4, leaning toward requiring 5 because unclear in manuscript if MzaA is not required"
+Nhi	Nhi	Nhi	1	defensefinder	
+NixI	NixI	NixI	1	defensefinder	
+NLR	NLR_like_bNACHT01	NLR_like_bNACHT01	1	defensefinder	
+NLR	NLR_like_bNACHT09	NLR_like_bNACHT09	1	defensefinder	
+NLR	NLR	NLR	NA	defensefinder	
+Old_exonuclease	Old_exonuclease	Old_exonuclease	1	defensefinder	
+Olokun	Olokun	Olokun	2	defensefinder	
+pAgo	pAgo_type_I	pAgo	1	defensefinder	
+PARIS	Paris_type_I	PARIS_I	2	defensefinder	"looks like AriA in padloc is matching AAA_15 better than AAA_21_DUF4435, so going to say PARIS_I in df is Paris in padloc"
+PARIS	Paris_type_I_merge	PARIS_I_merge	1	defensefinder	
+PARIS	Paris_type_II	PARIS_II	2	defensefinder	
+PARIS	Paris_type_II_merge	PARIS_II_merge	1	defensefinder	
+PARIS	Paris	Rst_PARIS	NA	defensefinder	
+PD-Lambda-1	PD-Lambda-1	PD-Lambda-1	1	defensefinder	
+PD-Lambda-2	PD-Lambda-2	PD-Lambda-2	2	defensefinder	
+PD-Lambda-3	PD-Lambda-3	PD-Lambda-3	2	defensefinder	
+PD-Lambda-4	PD-Lambda-4	PD-Lambda-4	2	defensefinder	
+PD-Lambda-5	PD-Lambda-5	PD-Lambda-5	2	defensefinder	
+PD-Lambda-6	PD-Lambda-6	PD-Lambda-6	1	defensefinder	
+PD-T4-1	PD-T4-1	PD-T4-1	1	defensefinder	
+PD-T4-10	PD-T4-10	PD-T4-10	2	defensefinder	
+PD-T4-2	PD-T4-2	PD-T4-2	2	defensefinder	
+PD-T4-3	PD-T4-3	PD-T4-3	1	defensefinder	
+PD-T4-4	PD-T4-4	PD-T4-4	2	defensefinder	
+PD-T4-5	PD-T4-5	PD-T4-5	1	defensefinder	
+PD-T4-6	PD-T4-6	PD-T4-6	1	defensefinder	
+PD-T4-7	PD-T4-7	PD-T4-7	1	defensefinder	
+PD-T4-8	PD-T4-8	PD-T4-8	1	defensefinder	
+PD-T4-9	PD-T4-9	PD-T4-9	2	defensefinder	
+PD-T7-1	PD-T7-1	PD-T7-1	1	defensefinder	
+PD-T7-2	PD-T7-2	PD-T7-2	2	defensefinder	
+PD-T7-3	PD-T7-3	PD-T7-3	1	defensefinder	
+PD-T7-4	PD-T7-4	PD-T7-4	1	defensefinder	
+PD-T7-5	PD-T7-5	PD-T7-5	1	defensefinder	
+PfiAT	PfiAT	PfiAT	2	defensefinder	
+Pif	Pif	Pif	2	defensefinder	"defensefinder requires PifA and PifC, but can't access paper to see why and padloc only requires PifA so just calling them both Pif - PifC didn't have any hits to the SAGs anyway"
+Ppl	Ppl	Gao_Ppl	1	defensefinder	
+PrrC	PrrC	PrrC	2	defensefinder	leaning toward using 2 genes as required based on the paper
+PsyrTA	PsyrTA	PsyrTA	2	defensefinder	
+Pycsar	Pycsar	Pycsar	2	defensefinder	
+Qat	Qat	Gao_Qat	4	defensefinder	same genes as QatABCD in padloc
+RADAR	RADAR_type_I	radar_I	2	defensefinder	
+RADAR	RADAR_type_II	radar_II	3	defensefinder	
+RADAR	RADAR	RADAR	NA	defensefinder	
+Retron	Retron_type_I_A	Retron_I_A	3	defensefinder	
+Retron	Retron_type_I_B	Retron_I_B	2	defensefinder	
+Retron	Retron_type_I_C	Retron_I_C	1	defensefinder	
+Retron	Retron_type_II	Retron_II	2	defensefinder	
+Retron	Retron_type_III	Retron_III	2	defensefinder	
+Retron	Retron_type_IV	Retron_IV	2	defensefinder	
+Retron	Retron_type_IX	Retron_IX	2	defensefinder	"requires one less gene than padloc - unsure which to trust but don't wanna deal with it, appear to require similar genes in general (RT, HEPN, [HTH in padloc or E2F_TDP in df], df only requires RT + HTH or E2F_TDP)"
+Retron	Retron_type_V	Retron_V	2	defensefinder	
+Retron	Retron_type_VI	Retron_VI	2	defensefinder	"df only requires RT and HTH, but padloc requires RT, HTH, and SP; paper appear to require SP (small protein of unknown function), so going to go with 3 min genes in the end"
+Retron	Retron_type_VII_A1	Retron_VII_1	1	defensefinder	
+Retron	Retron_type_VII_A2	Retron_VII_2	2	defensefinder	
+Retron	Retron_type_VIII	Retron_VIII	2	defensefinder	
+Retron	Retron_type_X	Retron_X	2	defensefinder	
+Retron	Retron_type_XI	Retron_XI	1	defensefinder	
+Retron	Retron_type_XII	Retron_XII	1	defensefinder	
+Retron	Retron_type_XIII	Retron_XIII	2	defensefinder	"conflict in numbers between padloc and defensefinder because it looks like WGR is a separate gene in padloc but in df, it's part of SWIM - WHSWIM"
+Retron	Retron	Retron	NA	defensefinder	
+RexAB	RexAB	RexAB	2	defensefinder	
+RL	RL	Gao_RL	4	defensefinder	
+RloC	RloC	RloC	1	defensefinder	
+RM	RM_type_I	RM_Type_I	2	defensefinder	
+RM	RM_type_II	RM_Type_II	2	defensefinder	
+RM	RM_type_IIG	RM_Type_IIG	1	defensefinder	
+RM	RM_type_III	RM_Type_III	2	defensefinder	
+RM	RM_type_IV	RM_Type_IV	1	defensefinder	
+RM	RM	RM	NA	defensefinder	
+RnlAB	RnlAB	RnlAB	2	defensefinder	
+RosmerTA	RosmerTA	RosmerTA	2	defensefinder	
+RT_nitrilase_TM	RT_nitrilase_TM	Rst_RT-Tm	2	defensefinder	
+RT_nitrilase_TM	RT_nitrilase_TM	Rst_RT-nitrilase-Tm	NA	defensefinder	
+SanaTA	SanaTA	SanaTA	2	defensefinder	
+Sefir	Sefir	SEFIR	1	defensefinder	
+Septu	Septu_type_I	Septu	2	defensefinder	genes match those of type_I in padloc best (A and B (with both having alternates but no accessory))
+Shango	Shango	Shango	2	defensefinder	
+Shedu	Shedu	Shedu	1	defensefinder	
+ShosTA	ShosTA	ShosTA	2	defensefinder	
+SoFic	SoFic	SoFic	1	defensefinder	
+SoFic	SoFic	SoFIC	NA	defensefinder	
+SpbK	SpbK	SpbK	1	defensefinder	
+SspBCDE	SspBCD	SspBCDE	3	defensefinder	
+Stk2	Stk2	Stk2	1	defensefinder	
+TerY	TerY	Gao_TerY	3	defensefinder	
+Thoeris	Thoeris_type_I	Thoeris_I	2	defensefinder	
+Thoeris	Thoeris_type_I	Thoeris_II	2	defensefinder	"does not include ThsC in xml file - which is necessary to be typeII, only has a different version of ThsA in Theoris_II so I'm just calling this other"
+Thoeris	Thoeris	Thoeris	NA	defensefinder	
+Tiamat	Tiamat	Tiamat	1	defensefinder	
+TIR_NLR	TIR_NLR	Rst_TIR-NLR	1	defensefinder	
+Tmn	Tmn	Gao_Tmn	1	defensefinder	
+Upx	Upx	Gao_Upx	1	defensefinder	
+Uzume	Uzume	Uzume	1	defensefinder	
+Viperin	Viperin_solo	Viperin	1	defensefinder	
+Wadjet	Wadjet_other	Wadjet	3	defensefinder	
+Wadjet	Wadjet_type_I	Wadjet_I	3	defensefinder	"defensefinder only requires 3 of 4 core genes, but 4 is clearly essential in Doron paper"
+Wadjet	Wadjet_type_II	Wadjet_II	3	defensefinder	
+Wadjet	Wadjet_type_III	Wadjet_III	3	defensefinder	
+Zorya	Zorya_type_I	Zorya_TypeI	3	defensefinder	"defensefinder only requires 3 of core 4, but 4 is clearly essential in Doron paper"
+Zorya	Zorya_type_II	Zorya_TypeII	3	defensefinder	
+Zorya	Zorya	Zorya	NA	defensefinder	
+dXTPase	dCTPdeaminase	dCTPdeaminase	1	defensefinder	in padloc but only designated as dXTPase by default. Fixed this in my parsing
+dXTPase	dXTPase	dXTPase	1	padloc	
+2TM_1TM_TIR	2TM_1TM_TIR	2TM-1TM-TIR	3	padloc	
+3HP	3HP	3HP	3	padloc	
+AbiA	AbiA_large	AbiA	1	padloc	"calling ""large"" because it only requires one gene, as defensefinder's AbiA_large"
+AbiB	AbiB	AbiB	1	padloc	
+AbiC	AbiC	AbiC	1	padloc	
+AbiD	AbiD	AbiD	1	padloc	
+AbiE	AbiE	AbiE	2	padloc	
+AbiG	AbiG	AbiG	2	padloc	
+AbiH	AbiH	AbiH	1	padloc	
+AbiI	AbiI	AbiI	1	padloc	
+AbiJ	AbiJ	AbiJ	1	padloc	
+AbiK	AbiK	AbiK	1	padloc	
+AbiL	AbiL	AbiL	2	padloc	
+AbiN	AbiN	AbiN	1	padloc	
+AbiO	AbiO	AbiO	1	padloc	
+AbiP	AbiP	AbiP	1	padloc	"looks like AbiP is distinct system in padloc but not in DF, going to leave as separate"
+AbiQ	AbiQ	AbiQ	1	padloc	
+AbiT	AbiT	AbiT	2	padloc	
+AbiU	AbiU	AbiU	1	padloc	
+AbiV	AbiV	AbiV	1	padloc	
+AbiZ	AbiZ	AbiZ	1	padloc	
+ApeA	ApeA	ApeA	1	padloc	
+AVAST	AVAST_type_I	AVAST_type_I	3	padloc	"requires 3 genes, unlike DF's AVAST_I, so keeping that as type_I but calling AVAST_I ""AVAST_type_I_other"""
+AVAST	AVAST_type_I_other	AVAST_type_I_other	2	padloc	"requires 2 genes, like DF's AVAST_I, so  calling DF's AVAST_I ""AVAST_type_I_other"""
+AVAST	AVAST_type_II	AVAST_type_II	1	padloc	
+AVAST	AVAST_type_III	AVAST_type_III	2	padloc	
+AVAST	AVAST_type_IV	AVAST_type_IV	1	padloc	
+AVAST	AVAST_type_V	AVAST_type_V	1	padloc	
+BREX	BREX_other	brex_other	2	padloc	"only in padloc, not really showing up in SAGs anyway"
+BREX	BREX_type_I	brex_type_I	6	padloc	"df requires 3  genes(BrxZ,BrxL, and an accessory (C,A,B,orX)) but padloc requires 6 (BrxA,B,C,X,Z,L), just going to call same"
+BREX	BREX_type_II	brex_type_II	6	padloc	"df only requires 3 genes (Z,W + accessory(Y,D,X)), but padloc requires 6 (W,X,C,Z,D,H) - calling same even though Y missing from padloc set and C and H there"
+BREX	BREX_type_III	brex_type_III	6	padloc	"df only requires 3 of core genes (Z,F,H,X) ;(acc C,Y,A,), while padloc requires (A,C,F,X,H,Z)"
+BREX	BREX_type_IV	brex_type_IV	4	padloc	"df only requires 2 genes and 2 of core ( Y,L,P) (acc: C,Z,);  padloc requires 5 genes: C,L,P,Z - missing Y"
+BREX	BREX_type_V	brex_type_V	6	padloc	"df requires 4 total, 2 core (Z,HII; acc: C,Y,A,B,X); padloc requires 6 (A,B,C,HII,X,Z) - no Y"
+BREX	BREX_type_VI	brex_type_VI	8	padloc	"df requires 4 total, 2 core (Z,E; acc: C,Y,A,B,D,HI,X); padloc requires 8 (A,B,C,D,E,HI,X,Z) - no Y"
+BstA	BstA	BstA	1	padloc	
+Cas	Cas_adaptation	cas_adaptation	2	padloc	"not in defensefinder, capitalizing cas to be consistent"
+Cas	Cas_type_arrays	cas_type_arrays	1	padloc	"not in defensefinder, capitalizing cas to be consistent"
+Cas	Cas_Class1_TypeI_subtypeA	cas_type_I-A	5	padloc	
+Cas	Cas_Class1_TypeI_subtypeB_v1	cas_type_I-B1	4	padloc	defensefinder lacks distinction between subtypes of subtypes (eg B1 and B2) - only calls B; separating the number with v for version to aid merge
+Cas	Cas_Class1_TypeI_subtypeB_v2	cas_type_I-B2	4	padloc	defensefinder lacks distinction between subtypes of subtypes (eg B1 and B2) - only calls B; separating the number with v for version to aid merge
+Cas	Cas_Class1_TypeI_subtypeC	cas_type_I-C	4	padloc	
+Cas	Cas_Class1_TypeI_subtypeD	cas_type_I-D	4	padloc	
+Cas	Cas_Class1_TypeI_subtypeE	cas_type_I-E	4	padloc	
+Cas	Cas_Class1_TypeI_subtypeF_v1	cas_type_I-F1	4	padloc	defensefinder lacks distinction between subtypes of subtypes (eg B1 and B2) - only calls B; separating the number with v for version to aid merge
+Cas	Cas_Class1_TypeI_subtypeF_v2	cas_type_I-F2	4	padloc	defensefinder lacks distinction between subtypes of subtypes (eg B1 and B2) - only calls B; separating the number with v for version to aid merge
+Cas	Cas_Class1_TypeI_subtypeF_v3	cas_type_I-F3	4	padloc	defensefinder lacks distinction between subtypes of subtypes (eg B1 and B2) - only calls B; separating the number with v for version to aid merge
+Cas	Cas_Class1_TypeI_subtypeG	cas_type_I-G	4	padloc	
+Cas	Cas_Class2_TypeII_subtypeA	cas_type_II-A	3	padloc	
+Cas	Cas_Class2_TypeII_subtypeB	cas_type_II-B	3	padloc	
+Cas	Cas_Class2_TypeII_subtypeC	cas_type_II-C	3	padloc	
+Cas	Cas_Class1_TypeIII_subtypeA	cas_type_III-A	5	padloc	
+Cas	Cas_Class1_TypeIII_subtypeB	cas_type_III-B	4	padloc	
+Cas	Cas_Class1_TypeIII_subtypeC	cas_type_III-C	4	padloc	
+Cas	Cas_Class1_TypeIII_subtypeD	cas_type_III-D	4	padloc	
+Cas	Cas_Class1_TypeIII_subtypeE	cas_type_III-E	1	padloc	
+Cas	Cas_Class1_TypeIII_subtypeF	cas_type_III-F	4	padloc	
+Cas	Cas_Class1_TypeIII_subtypeG	cas_type_III-G	3	padloc	absent in defensefindr
+Cas	Cas_Class1_TypeIII_subtypeH	cas_type_III-H	2	padloc	absent in defensefindr
+Cas	Cas_Class1_TypeIV_subtypeA	cas_type_IV-A	4	padloc	
+Cas	Cas_Class1_TypeIV_subtypeB	cas_type_IV-B	4	padloc	
+Cas	Cas_Class1_TypeIV_subtypeC	cas_type_IV-C	5	padloc	
+Cas	Cas_Class1_TypeIV_subtypeD	cas_type_IV-D	5	padloc	absent in defensefindr
+Cas	Cas_Class1_TypeIV_subtypeE	cas_type_IV-E	4	padloc	absent in defensefindr
+Cas	Cas_type_other	cas_type_other	2	padloc	absent in defensefindr
+Cas	Cas_Class2_TypeV	cas_type_V	2	padloc	
+Cas	Cas_Class2_TypeV_subtypeK	cas_type_V-K	2	padloc	
+Cas	Cas_Class2_TypeVI	cas_type_VI	2	padloc	
+CBASS	CBASS_other	cbass_other	2	padloc	"unclear if it overlaps with CBASS in defensefinder, so keeping separate"
+CBASS	CBASS_type_I	cbass_type_I	2	padloc	
+CBASS	CBASS_type_II	cbass_type_II	4	padloc	
+CBASS	CBASS_type_III	cbass_type_III	4	padloc	"from my reading, it requires 4 genes, but defensefinder only requires 3É, appears to exclude TRIP13 which is necessary!"
+CBASS	CBASS_type_Iis	cbass_type_IIs	3	padloc	
+CBASS	CBASS_type_IV	cbass_type_IV	4	padloc	
+DarTG	DarTG	darTG	2	padloc	
+DISARM	DISARM_other	disarm_other	2	padloc	
+DISARM	DISARM_type_I	disarm_type_I	5	padloc	
+DISARM	DISARM_type_II	disarm_type_II	4	padloc	
+DMS	DMS_other	DMS_other	2	padloc	
+Dnd	Dnd_ABCDE	PT_DndABCDE	3	padloc	
+Dnd	Dnd_FGH	PT_DndFGH	3	padloc	suspiciously looks like DefenseFinders Dnd_ABCDEFGH but going to keep separate for now since they have different min gene requirements
+Dpd	Dpd	Dpd	3	padloc	I think I'll use 4 genes as minimum for Dpd because the paper doesn't make clear if any of the genes are NOT essential
+Dpd	Dpd_other	Dpd_other	2	padloc	
+DprA-PRTase	DprA-PRTase	DprA-PRTase	2	padloc	
+DRT	DRT_class_I	DRT_class_I	1	padloc	not in defensefinder - no idea what these are
+DRT	DRT_class_II	DRT_class_II	1	padloc	not in defensefinder - no idea what these are
+DRT	DRT_class_III	DRT_class_III	1	padloc	not in defensefinder - no idea what these are
+DRT	DRT_other	DRT_other	2	padloc	not in defensefinder - no idea what these are
+DRT	DRT_type_I	DRT_type_I	2	padloc	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_II	DRT_type_II	1	padloc	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_III	DRT_type_III	2	padloc	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_IV	DRT_type_IV	1	padloc	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+DRT	DRT_type_V	DRT_type_V	1	padloc	"does not distinguish between class or type in defensefinder, but the genes correspond to the types from Gao et al, so designating here as same as type in padloc"
+Druantia	Druantia_other	druantia_other	2	padloc	
+Druantia	Druantia_type_I	druantia_type_I	5	padloc	
+Druantia	Druantia_type_II	druantia_type_II	4	padloc	
+Druantia	Druantia_type_III	druantia_type_III	2	padloc	
+Druantia	Druantia_type_IV	druantia_type_IV	3	padloc	
+Dsr	Dsr_type_I	dsr1	1	padloc	
+Dsr	Dsr_type_II	dsr2	1	padloc	
+DUF4238	DUF4238	DUF4238	1	padloc	has rst prefix in defensefinder
+dXTPase	dXTPase	dXTPase	1	padloc	
+Gabija	Gabija	gabija	2	padloc	
+GAO_29	GAO_29	GAO_29	4	padloc	unclear which system these genes aligns in defensefinder
+GAO_29	GAO_29_other	GAO_29_other	2	padloc	unclear which system these genes aligns in defensefinder
+GasderMIN	GasderMIN	gasdermin	1	padloc	
+Gop_beta_cll	Gop_beta_cll	gop_beta_cll	3	padloc	
+Hachiman	Hachiman_other	hachiman_other	2	padloc	
+Hachiman	Hachiman_type_I	hachiman_type_I	2	padloc	
+Hachiman	Hachiman_type_II	hachiman_type_II	3	padloc	
+Helicase_DUF2290	Helicase_DUF2290	Helicase-DUF2290	2	padloc	
+Her	Her_SIR	GAO_19	2	padloc	genes required for this match Gao_Her_SIR in DefenseFinder (SIR2 HerA)
+Her	Her_DUF	GAO_20	2	padloc	genes required for this match Gao_Her_DUF in DefenseFinder (DUF4297 HerA)
+Hhe	Hhe	hhe	1	padloc	
+Hma	Hma	hma	3	padloc	
+Hydrolase_TM	Hydrolase_TM	Hydrolase-TM	2	padloc	
+Iet	Iet	ietAS	2	padloc	
+Kiwa	Kiwa	kiwa	2	padloc	
+Lamassu	Lamassu_other	lamassu_other	2	padloc	
+Lamassu	Lamassu_type_I	lamassu_type_I	2	padloc	
+Lamassu	Lamassu_type_II	lamassu_type_II	3	padloc	
+Lit	Lit	Lit	1	padloc	
+Mza	Mza	mza	4	padloc	Why is mzaA optional? The paper (Gao et al) does not look optional
+Mza	Mza_other	mza_other	2	padloc	
+Nhi	Nhi	Nhi	1	padloc	
+Old_exonuclease	Old_exonuclease	Old	1	padloc	"assuming this is referring to Old_exonuclease; labeling this with exonuclease so I don't mess myself up because I label files ""old"" sometimes"
+pAgo	pAgo_other	argonaute_other	1	padloc	
+pAgo	pAgo_type_I	argonaute_solo	1	padloc	"distinctions between types don't exist in DefenseFinder, but the DF pAgo gene would hit to solo and type_I similarly"
+pAgo	pAgo_type_I	argonaute_type_I	2	padloc	"distinctions between types don't exist in DefenseFinder, but the DF pAgo gene would hit to solo and type_I similarly"
+pAgo	pAgo_type_II	argonaute_type_II	2	padloc	"though types II, III, and SiAgo don't exist in DF, going to use pAgo abbrev to stay consistent"
+pAgo	pAgo_type_III	argonaute_type_III	3	padloc	"though types II, III, and SiAgo don't exist in DF, going to use pAgo abbrev to stay consistent"
+pAgo	pAgo_type_SiAgo	argonaute_type_SiAgo	3	padloc	"though types II, III, and SiAgo don't exist in DF, going to use pAgo abbrev to stay consistent"
+PARIS	Paris_type_I	Paris	2	padloc	
+PARIS	Paris_type_II_merge	Paris_fused	1	padloc	looks like AriAB is hitting to PARIS_II_merge better than PARIS_I_merge surprisingly
+PbeABCD	PbeABCD	PT_PbeABCD	2	padloc	
+Pif	Pif	PifA	1	padloc	
+Ppl	Ppl	ppl	1	padloc	
+PrrC	PrrC	PrrC	1	padloc	leaning toward using 2 genes as required based on the paper
+PT_other	PT_other	PT_other	2	padloc	"looks like a combo of Dnd, Pbe, and Ssp genes"
+Pycsar	Pycsar	pycsar_effector	2	padloc	"just calling Pycsar to match defensefinder, same genes included in defensefinder, but just limited to an effector PycTIR , PycTM, or just 'effector'"
+Pycsar	Pycsar	pycsar_other	2	padloc	"just calling Pycsar to match defensefinder because they require the same genes (PycC + some effector - more are listed here than in ""pycsar_effector"" )"
+Pycsar	Pycsar_unknown	pycsar_unknown	1	padloc	
+Qat	Qat	qatABCD	4	padloc	"same genes as Gao_Qat in defensefinder, so just calling Qat"
+Qat	Qat_other	qatABCD_other	2	padloc	
+RADAR	RADAR_type_I	RADAR	2	padloc	"same genes as defensefinder radar_I, so calling ""RADAR_type_I"""
+Retron	Retron_Ec107-like	retron_Ec107-like	2	padloc	
+Retron	Retron_type_I_A	retron_I-A	3	padloc	
+Retron	Retron_type_I_B	retron_I-B	2	padloc	
+Retron	Retron_type_I_C	retron_I-C	1	padloc	
+Retron	Retron_type_II	retron_II-A	2	padloc	
+Retron	Retron_type_III	retron_III-A	2	padloc	
+Retron	Retron_type_IV	retron_IV	2	padloc	
+Retron	Retron_type_IX	retron_IX	3	padloc	
+Retron	Retron_other	retron_other	2	padloc	
+Retron	Retron_outgroup	retron_outgroup	2	padloc	
+Retron	Retron_type_V	retron_V	2	padloc	
+Retron	Retron_type_VI	retron_VI	3	padloc	"df only requires RT and HTH, but padloc requires RT, HTH, and SP; paper appear to require SP (small protein of unknown function), so going to go with 3 in the end"
+Retron	Retron_type_VII_A1	retron_VII-A1	1	padloc	
+Retron	Retron_type_VII_A2	retron_VII-A2	2	padloc	
+Retron	Retron_type_VIII	retron_VIII	2	padloc	
+Retron	Retron_type_X	retron_X	2	padloc	
+Retron	Retron_type_XI	retron_XI	1	padloc	
+Retron	Retron_type_XII	retron_XII	1	padloc	
+Retron	Retron_type_XIII	retron_XIII	3	padloc	"conflict in numbers between padloc and defensefinder because it looks like WGR is a separate gene in padloc but in df, it's part of SWIM - WHSWIM"
+RexAB	RexAB	RexAB	2	padloc	
+RM	RM_other	RM_other	2	padloc	
+RM	RM_type_I	RM_type_I	2	padloc	
+RM	RM_type_I_REMT	RM_type_I_REMT	1	padloc	
+RM	RM_type_II	RM_type_II	2	padloc	
+RM	RM_type_IIG	RM_type_IIG	1	padloc	
+RM	RM_type_III	RM_type_III	2	padloc	
+RM	RM_type_IV	RM_type_IV	1	padloc	
+RT_nitrilase_TM	RT_nitrilase_TM	RT-nitrilase-TM	2	padloc	
+Septu	Septu_other	septu_other	2	padloc	
+Septu	Septu_type_I	septu_type_I	2	padloc	
+Septu	Septu_type_II	septu_type_II	3	padloc	
+Shedu	Shedu	shedu	1	padloc	
+SpbK	SpbK	spbK	1	padloc	
+SspBCDE	SspBCD	PT_SspABCD	3	padloc	this is a mess. This system should require E or FGH to be effective/complete. But neither defensefinder nor padloc say this in their system .xml or .yaml files. Calling this just SspBCD to be consistent with defensefinder even though defensefinder lumps in SspE and SspFGH in the same system (but requires NEITHER). But then defensefinder calls the system only 0.57 complete when BCDE are all present...
+SspE	SspE	PT_SspE	1	padloc	no single gene SspE system in defensefinder
+SspFGH	SspFGH	PT_SspFGH	3	padloc	
+Stk2	Stk2	Stk2	1	padloc	
+TerY	TerY	TerY-P	3	padloc	
+TerY	TerY_other	TerY-P_other	2	padloc	
+Thoeris	Thoeris_other	thoeris_other	2	padloc	
+Thoeris	Thoeris_type_I	thoeris_type_I	2	padloc	
+Thoeris	Thoeris_type_II	thoeris_type_II	3	padloc	
+Tin	Tin	Tin	1	padloc	
+TIR_NLR	TIR_NLR	TIR-NLR	1	padloc	
+Tmn	Tmn	tmn	1	padloc	
+Upx	Upx	upx	1	padloc	
+Viperin	Viperin_kinase_fusion	viperin_kinase_fusion	1	padloc	
+Viperin	Viperin_nerd	viperin_nerd	2	padloc	
+Viperin	Viperin_other	viperin_other	1	padloc	
+Viperin	Viperin_solo	viperin_solo	1	padloc	
+Viperin	Viperin_toxin	viperin_toxin	2	padloc	
+Viperin	Viperin_tpr	viperin_tpr	2	padloc	
+Wadjet	Wadjet_other	wadjet_other	2	padloc	
+Wadjet	Wadjet_type_I	wadjet_type_I	4	padloc	
+Wadjet	Wadjet_type_II	wadjet_type_II	4	padloc	
+Wadjet	Wadjet_type_III	wadjet_type_III	4	padloc	
+Zorya	Zorya_other	zorya_other	2	padloc	
+Zorya	Zorya_type_I	zorya_type_I	4	padloc	
+Zorya	Zorya_type_II	zorya_type_II	3	padloc	
+Zorya	Zorya_type_III	zorya_type_III	4	padloc	
+AbiA	AbiA	ABI_AbiA	NA	pads	
+AbiB	AbiB	ABI_AbiB	NA	pads	
+AbiC	AbiC	ABI_AbiC	NA	pads	
+AbiD	AbiD	ABI_AbiD	NA	pads	
+AbiD1	AbiD1	ABI_AbiD1	NA	pads	
+AbiE	AbiE	ABI_AbiE	NA	pads	
+AbiF	AbiF	ABI_AbiF	NA	pads	
+AbiG	AbiG	ABI_AbiG	NA	pads	
+AbiH	AbiH	ABI_AbiH	NA	pads	
+AbiJ	AbiJ	ABI_AbiJ	NA	pads	
+AbiK	AbiK	ABI_AbiK	NA	pads	
+AbiL	AbiL	ABI_AbiL	NA	pads	
+AbiN	AbiN	ABI_AbiN	NA	pads	
+AbiO	AbiO	ABI_AbiO	NA	pads	
+AbiP	AbiP	ABI_AbiP	NA	pads	
+AbiQ	AbiQ	ABI_AbiQ	NA	pads	
+AbiR	AbiR	ABI_AbiR	NA	pads	
+AbiT	AbiT	ABI_AbiT	NA	pads	
+AbiU	AbiU	ABI_AbiU	NA	pads	
+AbiV	AbiV	ABI_AbiV	NA	pads	
+AbiZ	AbiZ	ABI_AbiZ	NA	pads	
+BREX	BREX_type_I	BREX_typeI	NA	pads	
+BREX	BREX_type_II	BREX_typeII	NA	pads	
+BREX	BREX_type_III	BREX_typeIII	NA	pads	
+BREX	BREX_type_IV	BREX_typeIV	NA	pads	
+BREX	BREX_type_V	BREX_typeV	NA	pads	
+BREX	BREX_type_VI	BREX_typeVI	NA	pads	
+Cas	Cas_Class1_TypeI	CRISPR-CAS_typeI	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeA	CRISPR-CAS_typeI-A	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeB	CRISPR-CAS_typeI-B	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeC	CRISPR-CAS_typeI-C	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeC_V	CRISPR-CAS_typeI-C-V	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeD	CRISPR-CAS_typeI-D	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeE	CRISPR-CAS_typeI-E	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeF	CRISPR-CAS_typeI-F	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeF_v1	CRISPR-CAS_typeI-F-V1	NA	pads	
+Cas	Cas_Class1_TypeI_subtypeF_v2	CRISPR-CAS_typeI-F-V2	NA	pads	
+Cas	Cas_Class2_TypeII	CRISPR-CAS_typeII	NA	pads	
+Cas	Cas_Class2_TypeII_subtypeA	CRISPR-CAS_typeII-A	NA	pads	
+Cas	Cas_Class2_TypeII_subtypeB	CRISPR-CAS_typeII-B	NA	pads	
+Cas	Cas_Class2_TypeII_subtypeC	CRISPR-CAS_typeII-C	NA	pads	
+Cas	Cas_Class1_TypeIII	CRISPR-CAS_typeIII	NA	pads	
+Cas	Cas_Class1_TypeIII_subtypeA	CRISPR-CAS_typeIII-A	NA	pads	
+Cas	Cas_Class1_TypeIII_subtypeA_V	CRISPR-CAS_typeIII-A-V	NA	pads	
+Cas	Cas_Class1_TypeIII_subtypeB	CRISPR-CAS_typeIII-B	NA	pads	
+Cas	Cas_Class1_TypeIII_subtypeB_V	CRISPR-CAS_typeIII-B-V	NA	pads	
+Cas	Cas_Class1_TypeIV	CRISPR-CAS_typeIV	NA	pads	
+Cas	Cas_Class1_TypeIV_V	CRISPR-CAS_typeIV-V	NA	pads	
+Cas	Cas	CRISPR-CAS	NA	pads	
+DISARM	DISARM_type_I	DISARM_typeI	NA	pads	
+DISARM	DISARM_type_II	DISARM_typeII	NA	pads	
+Dnd	Dnd	DND	NA	pads	
+Druantia	Druantia_type_I	DRUANTIA_typeI	NA	pads	
+Druantia	Druantia_type_II	DRUANTIA_typeII	NA	pads	
+Druantia	Druantia_type_III	DRUANTIA_typeIII	NA	pads	
+Druantia	Druantia	DRUANTIA	NA	pads	
+Gabija	Gabija	GABIJA	NA	pads	
+Hachiman	Hachiman	HACHIMAN	NA	pads	
+Kiwa	Kiwa	KIWA	NA	pads	
+Lamassu	Lamassu	LAMASSU	NA	pads	
+Lit	Lit	ABI_Lit	NA	pads	
+pAgo	pAgo	PAGOS	NA	pads	
+PfiA	PfiA	ABI_PifA	NA	pads	
+PrrC	PrrC	ABI_PrrC	NA	pads	
+RexAB	RexAB	ABI_RexA	NA	pads	
+RexAB	RexAB	ABI_RexB	NA	pads	
+RloC	RloC	ABI_RloC	NA	pads	
+RM	RM_type_I	RM_typeI	NA	pads	
+RM	RM_type_II	RM_typeII	NA	pads	
+RM	RM_type_III	RM_typeIII	NA	pads	
+Septu	Septu	SEPTU	NA	pads	
+Shedu	Shedu	SHEDU	NA	pads	
+TA	TA_type_I	TA_typeI	NA	pads	
+TA	TA_type_II	TA_typeII	NA	pads	
+TA	TA_type_III	TA_typeIII	NA	pads	
+TA	TA_type_IV	TA_typeIV	NA	pads	
+TA	TA_type_V	TA_typeV	NA	pads	
+TA	TA_type_VI	TA_typeVI	NA	pads	
+TA	TA	TA	NA	pads	
+Thoeris	Thoeris	THOERIS	NA	pads	
+Wadjet	Wadjet_type_I	WADJET_typeI	NA	pads	
+Wadjet	Wadjet_type_II	WADJET_typeII	NA	pads	
+Wadjet	Wadjet_type_III	WADJET_typeIII	NA	pads	
+Wadjet	Wadjet	WADJET	NA	pads	
+Zorya	Zorya_type_I	ZORYA_typeI	NA	pads	
+Zorya	Zorya_type_II	ZORYA_typeII	NA	pads	
+Zorya	Zorya	ZORYA	NA	pads	
