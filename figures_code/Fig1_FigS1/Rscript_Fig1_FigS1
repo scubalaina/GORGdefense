@@ -50,6 +50,8 @@ mag_dataset_syscount_bar = mag_defcount %>%
   ylab("Proportion") + ggtitle("MAGs")
 mag_dataset_syscount_bar
 
+
+# Need to unzip before loading into R
 tesson_meltALL =read.csv("tesson2022_full_sys_info.csv",sep=",",header = T,check.names = F)
 tesson_meltALL$type = ifelse(tesson_meltALL$type == "Lamassu-Fam","Lamassu",
                              tesson_meltALL$type)
