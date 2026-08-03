@@ -8,7 +8,7 @@ library(reshape2)
 library(maps)
 
 dataset_col = c("#0C8AF3","#00437A")
-gorg_sys = read.csv("../gorgB_sys_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+gorg_sys = read.csv("../input_files/gorgB_sys_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
 
 
 # Figure 1a
@@ -31,7 +31,7 @@ gorg_dataset_syscount_bar
 
 
 # MAG info
-mag_sys_meta = read.csv("magB_50c_sys_meta.tsv",sep="\t",header=T,check.names = F)
+mag_sys_meta = read.csv("../input_files/magB_50c_sys_meta.tsv",sep="\t",header=T,check.names = F)
 
 mag_defcount = mag_sys_meta %>% group_by(dataset,totaldefenses_5plus) %>% summarise(mags= n()) %>% 
   mutate(prop_mags = mags/sum(mags)) %>% as.data.frame()
@@ -49,7 +49,7 @@ mag_dataset_syscount_bar = mag_defcount %>%
   ylab("Proportion") + ggtitle("MAGs")
 mag_dataset_syscount_bar
 
-tesson_meltALL =read.csv("tesson2022_full_sys_info.csv",sep=",",header = T,check.names = F)
+tesson_meltALL =read.csv("../input_files/tesson2022_full_sys_info.csv",sep=",",header = T,check.names = F)
 tesson_meltALL$type = ifelse(tesson_meltALL$type == "Lamassu-Fam","Lamassu",
                              tesson_meltALL$type)
 tesson_meltALL$type = ifelse(tesson_meltALL$type == "Gao_Mza","Mza",
