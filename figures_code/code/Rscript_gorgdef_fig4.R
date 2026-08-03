@@ -1,4 +1,3 @@
-setwd("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/code_v3/fig4/")
 library(ggplot2)
 library(ggpubr)
 library(tidyverse)
@@ -10,8 +9,8 @@ library(maps)
 # specify the dataset colors
 dataset_col = c("#0C8AF3","#00437A")
 # load in the wide and melted forms of the GORG defenses system info
-gorg_wide = read.csv("../gorgB_sys_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
-gorg_melt = read.csv("../gorgB_sys_50c_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+gorg_wide = read.csv("../input_files/gorgB_sys_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+gorg_melt = read.csv("../input_files/gorgB_sys_50c_meta_nobs.tsv",sep="\t",header=T,check.names = F)
 
 # separate Tropics and Dark
 gorgT_wide = gorg_wide %>% filter(dataset == "Tropics") %>% as.data.frame()
@@ -55,7 +54,7 @@ gorgT_ord_sys_bubble = gorgT_ord_sys_stats %>% filter(sags > 4)  %>% filter(sys_
   theme(axis.text.x = element_text(angle=90, size = 11),axis.text.y=element_text(size = 11),axis.title = element_blank(),legend.position = "top") +
   scale_alpha(range = c(0, 1),limits = c(0, 1)) + guides(alpha = guide_legend(title = "Proportion of SAGs in GORG Tropics Order"))
 gorgT_ord_sys_bubble
-ggsave("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/v3_figs/v3_svgs/gorgT_ord_sys_bubble.svg",gorgT_ord_sys_bubble,width = 6.8,height = 6.4)
+#ggsave("gorgT_ord_sys_bubble.svg",gorgT_ord_sys_bubble,width = 6.8,height = 6.4)
 
 gorgD_ord_sys_bubble = gorgD_ord_sys_stats %>% filter(sags > 4) %>% filter(sys_sags > 1) %>% filter(system != 0) %>% 
   ggplot(aes(y=reorder(Order,sags),x=reorder(system,-sys_sags))) + 
@@ -64,7 +63,7 @@ gorgD_ord_sys_bubble = gorgD_ord_sys_stats %>% filter(sags > 4) %>% filter(sys_s
   theme(axis.text.x = element_text(angle=90, size = 11),axis.text.y=element_text(size = 11),axis.title = element_blank(),legend.position = "top") +
   scale_alpha(range = c(0, 1)) + guides(alpha = guide_legend(title = "Proportion of SAGs in Order"))
 gorgD_ord_sys_bubble
-ggsave("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/v3_figs/v3_svgs/gorgD_ord_sys_bubble.svg",gorgD_ord_sys_bubble,width = 6.8,height = 6.4)
+#ggsave("gorgD_ord_sys_bubble.svg",gorgD_ord_sys_bubble,width = 6.8,height = 6.4)
 
 # subset for SAGs in the Tropics bubble plot
 gorgT_ord_sagcount_inplot = gorgT_ord_sys_stats %>% filter(sags > 4)  %>% filter(sys_sags > 1)  %>% filter(system != 0)  %>% 
@@ -72,7 +71,7 @@ gorgT_ord_sagcount_inplot = gorgT_ord_sys_stats %>% filter(sags > 4)  %>% filter
 gorgT_ord_sagcount_bar = gorgT_ord_sagcount_inplot %>% ggplot(aes(y=reorder(Order,log10(sags)),x=log10(sags))) + 
   geom_bar(stat="identity",fill="gray40") + theme_minimal()  + scale_x_reverse()
 gorgT_ord_sagcount_bar
-ggsave("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/v3_figs/v3_svgs/gorgT_ord_sagcount.svg",gorgT_ord_sagcount_bar,width = 6.8,height = 6.4)
+#ggsave("gorgT_ord_sagcount.svg",gorgT_ord_sagcount_bar,width = 6.8,height = 6.4)
 
 # subset for systems in the Tropics bubble plot
 gorgT_syscount_inplot = gorgT_ord_sys_stats %>% filter(sags > 4)  %>% filter(sys_sags > 1)  %>% filter(system != 0)  %>% 
@@ -80,7 +79,7 @@ gorgT_syscount_inplot = gorgT_ord_sys_stats %>% filter(sags > 4)  %>% filter(sys
 gorgT_syscount_bar = gorgT_syscount_inplot %>% filter(sys_sags > 1) %>% filter(system != 0) %>% ggplot(aes(x=reorder(system,-sys_sags),y=log10(sys_sags))) + 
   geom_bar(stat="identity",fill="gray40") + theme_minimal()  + scale_y_reverse() + theme(axis.text.x = element_text(angle = 90))
 gorgT_syscount_inplot
-ggsave("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/v3_figs/v3_svgs/gorgT_sys_sagcount.svg",gorgT_syscount_bar,width = 6.8,height = 6.4)
+#ggsave("gorgT_sys_sagcount.svg",gorgT_syscount_bar,width = 6.8,height = 6.4)
 
 
 # repeat above steps with Dark
@@ -89,7 +88,7 @@ gorgD_ord_sagcount_inplot = gorgD_ord_sys_stats %>% filter(sags > 4)  %>% filter
 gorgD_ord_sagcount_bar = gorgD_ord_sagcount_inplot %>% ggplot(aes(y=reorder(Order,log10(sags)),x=log10(sags))) + 
   geom_bar(stat="identity",fill="gray40") + theme_minimal()  + scale_x_reverse()
 gorgD_ord_sagcount_bar
-ggsave("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/v3_figs/v3_svgs/gorgD_ord_sagcount_bar.svg",gorgD_ord_sagcount_bar,width=2.5,height=5.17)
+#ggsave("gorgD_ord_sagcount_bar.svg",gorgD_ord_sagcount_bar,width=2.5,height=5.17)
 
 gorgD_syscount_inplot = gorgD_ord_sys_stats %>% filter(sags > 4)  %>% filter(sys_sags > 1)  %>% filter(system != 0)  %>% 
   select(system,sys_sags) %>% unique() %>% as.data.frame()
@@ -99,7 +98,7 @@ gorgD_syscount_bar = gorgD_syscount_inplot %>% filter(sys_sags > 1) %>% filter(s
   geom_bar(stat="identity",fill="gray40") + theme_minimal()  + scale_y_reverse() + theme(axis.text.x = element_text(angle = 90))
 gorgD_syscount_bar
 
-ggsave("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/v3_figs/v3_svgs/gorgD_sys_sagcount_bar.svg",gorgD_syscount_bar,width = 5.6, height  = 1.6, units="in" )
+#ggsave("gorgD_sys_sagcount_bar.svg",gorgD_syscount_bar,width = 5.6, height  = 1.6, units="in" )
 
 
 
