@@ -5,12 +5,12 @@ library(ggalluvial)
 library(ggplot2)
 library(ggpubr)
 
-setwd("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/code_v3/fig2/")
+
 # Load in GORG dataframe in wide format (each row is a genome, columns are metadata and defense subtypes)
 # This is also Supplemental Table S2
-sub_wide = read.csv("gorgB_sub_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+sub_wide = read.csv("../input_files/gorgB_sub_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
 # Load in GORg dataframe in melted format where each row contains a genome and a defense ("subtype" columns) (includes metadata columns)
-sub_melt = read.csv("gorgB_sub_50c_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+sub_melt = read.csv("../input_files/gorgB_sub_50c_meta_nobs.tsv",sep="\t",header=T,check.names = F)
 
 # filter these dataframes to separate Dark and Tropics datasets
 gorgD_melt = sub_melt %>% filter(dataset == "Dark") %>% as.data.frame()
