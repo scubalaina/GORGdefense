@@ -1,1 +1,235 @@
+# Code for Figure 2
+library(dplyr)
+library(tidyr)
+library(ggalluvial)
+library(ggplot2)
+library(ggpubr)
+
+setwd("/Users/aweinheimer/Documents/GORG_defense/gorgdef_man/v3_files/code_v3/fig2/")
+# Load in GORG dataframe in wide format (each row is a genome, columns are metadata and defense subtypes)
+# This is also Supplemental Table S2
+sub_wide = read.csv("gorgB_sub_50c_wide_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+# Load in GORg dataframe in melted format where each row contains a genome and a defense ("subtype" columns) (includes metadata columns)
+sub_melt = read.csv("gorgB_sub_50c_meta_nobs.tsv",sep="\t",header=T,check.names = F)
+
+# filter these dataframes to separate Dark and Tropics datasets
+gorgD_melt = sub_melt %>% filter(dataset == "Dark") %>% as.data.frame()
+gorgT_melt = sub_melt %>% filter(dataset == "Tropics") %>% as.data.frame()
+gorgD_wide = sub_wide %>% filter(dataset == "Dark") %>% as.data.frame()
+gorgT_wide = sub_wide %>% filter(dataset == "Tropics") %>% as.data.frame()
+
+# because the alluvial plot is meant to represent 1:1 connections between stratum 1 (Order)
+# and stratum 2 (defense subtype) for presence of a defense in a SAG, the instances need to be 
+# set to 1 to indicate presence (created "pres" column) because some SAGs have multiple of a defense subtype
+# and because some SAGs have multiple subtypes of defenses, we divided this presence by the number
+# of subtypes in that SAG to normalize
+gorgT_subtype_div = gorgT_melt %>% group_by(Order,genome) %>% summarise(subtypes = n()) %>% as.data.frame() %>% arrange(desc(subtypes))
+gorgT_melt$pres = 1
+gorgT_melt = merge(gorgT_melt,gorgT_subtype_div,on=c("Order","genome"),all.x = T)
+gorgT_melt$prop_div = gorgT_melt$pres / gorgT_melt$subtypes
+
+gorgD_subtype_div = gorgD_melt %>% group_by(Order,genome) %>% summarise(subtypes = n()) %>% as.data.frame() %>% arrange(desc(subtypes))
+gorgD_melt$pres = 1
+gorgD_melt = merge(gorgD_melt,gorgD_subtype_div,on=c("Order","genome"),all.x = T)
+gorgD_melt$prop_div = gorgD_melt$pres / gorgD_melt$subtypes
+
+
+# Determine the taxonomic orders containing at least 1% of SAGs 
+subset_1p_ord = function(wide){
+  count_df = wide %>%
+    group_by(Order) %>%
+    summarise(sags = n()) %>% mutate(prop_sags = sags / sum(sags)) %>%
+    arrange(desc(sags)) 
+  subbed_df = subset(count_df,count_df$prop_sags >= 0.01)
+  top_orders = as.vector(subbed_df$Order)
+  return(top_orders)
+}
+
+# Get list of orders for GORG Tropics
+gorgT_1p_ord = subset_1p_ord(gorgT_wide)
+# Get a list of orders for GORG Dark
+gorgD_1p_ord = subset_1p_ord(gorgD_wide)
+# create columns where Orders  present in < 1% are "other order" 
+# label with "z" at beginning so ggplot puts them at the bottom
+gorgT_wide$Order_other = ifelse(gorgT_wide$Order %in% gorgT_1p_ord,
+                                gorgT_wide$Order,"zOther_order")
+gorgD_wide$Order_other = ifelse(gorgD_wide$Order %in% gorgD_1p_ord,
+                                gorgD_wide$Order,"zOther_order")
+
+# the "Other order" column to the melted format of the subtype tables
+gorgT_melt$Order_other = ifelse(gorgT_melt$Order %in% gorgT_1p_ord, 
+                                gorgT_melt$Order,"Zz_other_Tropics_Order")
+gorgD_melt$Order_other = ifelse(gorgD_melt$Order %in% gorgD_1p_ord, 
+                                gorgD_melt$Order,"Zz_other_Dark_Order")
+
+
+# Get defense subtypes in <= 1% of SAGs
+subset_1p_subtype = function(meltsubtype,totalsags){
+  count_df = meltsubtype %>%
+    group_by(subtype) %>%
+    summarise(sags = n()) %>%
+    arrange(desc(sags)) 
+  count_df$prop_total = count_df$sags/totalsags
+  subbed_df = subset(count_df,count_df$prop_total >= 0.01)
+  top_defs = as.vector(subbed_df$subtype)
+  return(top_defs)
+}
+
+# Calculate number of SAGs in each dataset to get use for calculating defense subtypes 
+# in >=1% of each dataset, output copied below
+sub_wide %>% group_by(dataset) %>% summarise(sags=n()) %>% as.data.frame()
+#  dataset sags
+#1    Dark 2156
+# 2 Tropics 3880
+
+# run get list of defense subtypes in <= 1% of SAGs for GORG Tropics and Dark
+gorgT_top_1p_def = as.vector(subset_1p_subtype(gorgT_melt,3880))
+gorgD_top_1p_def = as.vector(subset_1p_subtype(gorgD_melt,2156))
+
+# add a column specifying "other" for subtypes in < 1% of SAGs
+gorgT_melt$subtype_other =  ifelse(gorgT_melt$subtype %in% gorgT_top_1p_def, 
+                                   as.character(gorgT_melt$subtype) ,"Zz_other_Tropics_defense")
+gorgD_melt$subtype_other =  ifelse(gorgD_melt$subtype %in% gorgD_top_1p_def, 
+                                   as.character(gorgD_melt$subtype) ,"Zz_other_Dark_defense")
+
+# group the dataframes by "other subtype" and "other order" and sum the normalized occurrence (prop_div)
+# of those "other" defenses
+gorgT_melt_1pord_1psubtype = as.data.frame(gorgT_melt %>% 
+                                             group_by(subtype_other,Order_other) %>%  
+                                             summarise(instances = sum(prop_div)))
+
+gorgD_melt_1pord_1psubtype = as.data.frame(gorgD_melt %>% 
+                                             group_by(subtype_other,Order_other) %>%  
+                                             summarise(instances = sum(prop_div)))
+
+# Relabel the columns in this table 
+colnames(gorgT_melt_1pord_1psubtype) = c("Subtype","Order","SAGs")
+colnames(gorgD_melt_1pord_1psubtype) = c("Subtype","Order","SAGs")
+# Account for SAGs that don't have defenses (subtype = 0 )
+gorgD_melt_1pord_1psubtype$Subtype = ifelse(gorgD_melt_1pord_1psubtype$Subtype == 0,"Zzz_none",gorgD_melt_1pord_1psubtype$Subtype)
+gorgT_melt_1pord_1psubtype$Subtype = ifelse(gorgT_melt_1pord_1psubtype$Subtype == 0,"Zzz_none",gorgT_melt_1pord_1psubtype$Subtype)
+
+# modify the above dataframe for ggalluvial 
+gorgD_melt_1pord_1psubtype[rep(row.names(gorgD_melt_1pord_1psubtype), gorgD_melt_1pord_1psubtype$SAGs), ]
+dark_expanded <- gorgD_melt_1pord_1psubtype[rep(row.names(gorgD_melt_1pord_1psubtype), gorgD_melt_1pord_1psubtype$SAGs), ]
+dark_expanded <- dark_expanded %>%
+  mutate(id = row_number()) %>%
+  pivot_longer(-c(SAGs, id), names_to = "Condition", values_to = "label")
+
+
+gorgT_melt_1pord_1psubtype[rep(row.names(gorgT_melt_1pord_1psubtype), gorgT_melt_1pord_1psubtype$SAGs), ]
+tropics_expanded <- gorgT_melt_1pord_1psubtype[rep(row.names(gorgT_melt_1pord_1psubtype), gorgT_melt_1pord_1psubtype$SAGs), ]
+tropics_expanded <- tropics_expanded %>%
+  mutate(id = row_number()) %>%
+  pivot_longer(-c(SAGs, id), names_to = "Condition", values_to = "label")
+
+# specify the colors in plot
+dark_alluv_colors = c("salmon", #AbiU
+                      "darkturquoise", # dGTPase
+                      "#722E8C", # Flavobacteriales
+                      "#ff0000", # HIMB59
+                      "yellow2", # Marinisomat
+                      "limegreen", # MGII
+                      "#6C75F0", # Nitrososphaerales
+                      "paleturquoise", # Nitrosospinales
+                      "blue", #PbeABCD
+                      "#EDA668", # Pelagibacterales
+                      "#ff00ff", # Poseidoniales
+                      "#861043", # PS1
+                      "dodgerblue", # Pseudomonadales
+                      "forestgreen", # PsyrTA
+                      "#F589D6", # Pycsar_unknown
+                      "#D9BAF7", # RM I
+                      "#BD81F7", # RM II
+                      "#A34EF5", # RM IIG
+                      "#9329FF", # RM III
+                      "#6200BF",# RM IV
+                      "goldenrod", # sar324
+                      "#648CA1", # SAR86 # 648CA1
+                      "slateblue", # SCGC-AAA003-L08
+                      "#AB5330", # ShosTA
+                      "#9BD694", # UBA11654
+                      "gray60", # other Order
+                      "gray40", # Other subtype
+                      "gray20",
+                      "brown",
+                      "pink")
+
+# prepare color columns for ggalluvial format
+dark_columnCols <- c(dark_alluv_colors)
+dark_stratCols <-rev(dark_columnCols)
+
+# create alluvial plot with ggplot2
+dark_alluival <- ggplot(dark_expanded, aes(x = Condition, stratum = label, alluvium = id, fill = label)) +
+  geom_flow(width = 0)+
+  scale_fill_manual(values = dark_columnCols) +
+  scale_color_manual(values = dark_stratCols) +
+  geom_stratum(width = 2 / 8, color = "white") +
+  scale_x_discrete(
+    expand = c(.25, .25), labels =c ("Order", "Defense subtype")
+  ) +
+  scale_y_continuous(breaks = NULL) +
+  theme_minimal() + ylab("Proportion") +
+  geom_text(color="gray20",
+            aes(label = after_stat(stratum),
+                hjust = ifelse(Condition == "Order", 1, 0),
+                x = as.numeric(factor(Condition)) + .075 * ifelse(Condition == "Order", -2, 2)),
+            stat = "stratum", size = 3)+
+  theme(legend.position = "none", axis.title.x = element_blank(),
+        axis.text.x = element_text(size=10,face = "bold",color="black"),
+        axis.title.y = element_text(size=10,color="black",face="bold"))
+
+# repeated code with GORG Tropcis
+tropics_alluv_colors = c("seagreen1", # Actinomarinales
+                       "darkturquoise", # dGTPase
+                       "#EDEDA6", # Eleos
+                       "#722E8C", # Flavobacteriales
+                       "red", # HIMB59
+                       "#A3A30F", # PCC-6307
+                       "#255914", #PD-T4-3
+                       "#EDA668", # Pelagibacterales
+                       "#ff00ff", # Poseidonales
+                       "dodgerblue", # Pseudomonadales
+                       "navy", # Puniceispirillales
+                       "#CC4758", # Rhodobacterales
+                       "#F589D6", # Pycsar_unknown
+                       "#D9BAF7", # RM I
+                       "#BD81F7", # RM II
+                       "#A34EF5", # RM IIG
+                       "#9329FF", # RM III
+                       "#6200BF", # RM IV
+                       "#648CA1", # SAR86
+                       "blue", # TMED127
+                       "yellowgreen", # Zorya
+                       "gray60", # other order
+                       "gray40", # otehr subtype
+                       "gray20") # none
+
+
+tropics_columnCols = tropics_alluv_colors
+tropics_stratCols = rev(tropics_alluv_colors)
+tropics_alluvial = ggplot(tropics_expanded, aes(x = Condition, stratum = label, alluvium = id, fill = label)) +
+  geom_flow(width = 0) +
+  scale_fill_manual(values = tropics_columnCols) +
+  scale_color_manual(values = tropics_stratCols) +
+  geom_stratum(width = 2/8 , color = "white") +
+  scale_x_discrete(
+    expand = c(.25, .25), labels =c ("Order", "Defense subtype")
+  ) +
+  scale_y_continuous(breaks = NULL) +
+  theme_minimal() + ylab("Proportion") +
+  geom_text(color="gray20",
+            aes(label = after_stat(stratum),
+                hjust = ifelse(Condition == "Order", 1, 0),
+                x = as.numeric(factor(Condition)) + .075 * ifelse(Condition == "Order", -2, 2)),
+            stat = "stratum", size = 3)+
+  theme(axis.title.x = element_blank(),axis.text.x = element_text(size=10,face = "bold",color="black"),
+        axis.title.y = element_text(size=10,color="black",face="bold"), legend.position = "none")
+
+
+
+both_alluvials = ggarrange(tropics_alluvial,dark_alluival,nrow=1,ncol=2,labels=c("a","b"))
+both_alluvials
+
+#ggsave("gorgB_order_subtype_alluvials.svg",both_alluvials,width=6.5,height=5)
 
